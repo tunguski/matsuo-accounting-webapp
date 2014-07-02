@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="span6">
+    <div mt-form-part="pl.matsuo.accounting.model.print.Invoice" mt-entity-name="entity.fields">
+      <div mt-form-field="issuanceDate" />
+      <div mt-form-field="sellPlace" />
+      <div mt-form-field="sellDate" />
+      <div mt-form-field="dueDate" />
+    </div>
+  </div>
+
+  <div ng-show="isInvoice" class="span6">
+    <div mt-form-part="pl.matsuo.accounting.model.print.Invoice" mt-entity-name="entity.fields">
+      <div mt-form-field="number" />
+      <div mt-form-field="paymentType" />
+      <div mt-form-field="bankAccountNumber" />
+      <div mt-form-field="comments" />
+    </div>
+  </div>
+  <div ng-show="!isInvoice" class="span6">
+    <div mt-form-part="pl.matsuo.accounting.model.print.Invoice" mt-entity-name="entity.fields">
+      <!-- %= renderer.create(Invoice.class).entityName("entity.fields")
+                  .attribute("translate", "entity.fields.receiptNumber")
+                  .attribute("translate-placeholder", "entity.fields.receiptNumber")
+                  .render("number") % -->
+      <div mt-form-field="number" />
+    </div>
+  </div>
+</div>

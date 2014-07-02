@@ -1,0 +1,27 @@
+{
+  "name": "matsuo-accounting-webapp",
+  "version": "0.1.0",
+  "authors": [
+    "Marek Romanowski <marek.romanowski@gmail.com>"
+  ],
+  "description": "Matsuo IT accounting library",
+  "keywords": [
+    ""
+  ],
+  "license": "LGPL 3.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "sample"
+  ],
+  "dependencies": {
+    "matsuo-core-webapp": "latest"
+  },
+  "devDependencies": {
+    "angular-mocks": ">=1.2.0"
+  },
+  "appPath": "app"
+}

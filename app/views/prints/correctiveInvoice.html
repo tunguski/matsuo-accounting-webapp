@@ -1,0 +1,18 @@
+<div ng-controller="CorrectiveInvoiceController">
+
+  <div ng-include="invoiceGeneralData.html"></div>
+
+  <invoice-table data="positions.invoice" readonly="true"></invoice-table>
+  <invoice-table data="positions.corrective"></invoice-table>
+
+  <div class="row">
+    <div class="span3 offset8">
+      <table class="table input-table">
+        <tr>
+          <td class="number invoice-summary">Wartość korekty:</td>
+          <td class="number summary invoice-summary">{{correctionValue() | number:2 }} zł</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
