@@ -8,7 +8,7 @@ angular.module('mt.cashRegisterService', [])
       var cashRegisterService = {
         getCashRegister: function() {
           var deferred = $q.defer();
-	  CashRegister.actualCashRegister().$promise.then(function (cashRegister) {
+	  CashRegister.actualCashRegister(function (cashRegister) {
             cashRegisterService.cashRegister = cashRegister;
             if (cashRegister) {
               deferred.resolve(cashRegister);
