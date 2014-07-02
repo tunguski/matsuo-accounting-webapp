@@ -5,7 +5,13 @@ angular.module('mt.accounting', ['mt.webapp', 'mt.cashRegisterService'])
       restFactoryProvider
           .define('CashDocument')
           .define('Payer')
-          .define('CashRegister')
+          .define('CashRegister', {
+            additionalFunctions: {
+              actualCashRegister: {
+                url: '/actualCashRegister/:idCashRegister'
+              }
+            }
+	  })
           .define('CashRegisterReport', {
             additionalFunctions: {
               reportForCashRegister: {

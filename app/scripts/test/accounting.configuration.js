@@ -21,3 +21,18 @@ angular.module('mt.ui')
         };
         return userGroupConfiguration;
       }]);
+
+angular.module('mt.accounting')
+    .run(function (menuService) {
+          menuService.menu.push({
+            title: 'Księgowość',
+            elements: [
+              { title: 'Kasa wyda', href: '#/prints/withdrawSlip' },
+              { title: 'Kasa przyjmie', href: '#/prints/depositSlip' },
+              { title: 'Faktura', href: '#/prints/invoice' },
+              { title: 'Faktura korygująca', href: '#/prints/correctiveInvoice' },
+              { title: 'Kasy', href: '#/cash/cashRegisters' },
+              { title: 'Raporty kasowe', href: '#/cash/cashRegisterReports' }
+            ]
+          });
+        });
