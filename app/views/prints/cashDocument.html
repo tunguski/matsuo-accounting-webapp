@@ -1,26 +1,22 @@
-<%@page import="pl.matsuo.accounting.model.print.Invoice"%>
-<%@page import="pl.matsuo.core.web.view.BootstrapRenderer"%>
-<%!  BootstrapRenderer renderer = BootstrapRenderer.renderer(); %>
-
 <div ng-controller="CashDocumentController">
 
   <form name="form" class="form-horizontal">
-    <div class="row"><div class="span12"><h4>Podstawowe dane</h4></div></div>
+    <div class=""><div class="col-md-12"><h4>Podstawowe dane</h4></div></div>
 
-    <div class="row">
-      <div class="span6">
+    <div class="">
+      <div class="col-md-6">
         <div mt-form-part="pl.matsuo.accounting.model.print.Invoice">
           <div mtf-ng-disabled="true" mt-html-name="seller.id" mt-form-field="idSeller" />
         </div>
       </div>
-      <div class="span3">
+      <div class="col-md-3">
         <table class="table table-condensed details-table">
           <tr><td>Nazwa</td><td name="seller_name">{{idSeller.value.firstName ? idSeller.value.firstName + ' ' + idSeller.value.lastName : idSeller.value.fullName}}</td></tr>
           <tr><td>Adres</td><td ng-bind-html="idSeller.value.address | addressPresenter"></td></tr>
         </table>
       </div>
 
-      <div class="span3">
+      <div class="col-md-3">
         <table class="table table-condensed details-table">
           <tr><td>NIP</td><td>{{idSeller.value.nip}}</td></tr>
           <tr><td>Regon</td><td>{{idSeller.value.regon}}</td></tr>
@@ -28,24 +24,24 @@
       </div>
     </div>
 
-    <div class="row"><div class="span12"><hr/></div></div>
+    <div class=""><div class="col-md-12"><hr/></div></div>
 
-    <div class="row">
-      <div class="span6">
+    <div class="">
+      <div class="col-md-6">
         <div mt-form-part="pl.matsuo.accounting.model.print.Invoice">
           <div mtf-ng-disabled="true" mt-html-name="buyer.id" mt-form-field="idBuyer" />
         </div>
       </div>
-      <div class="span3">
+      <div class="col-md-3">
         <table class="table table-condensed details-table">
           <tr><td>Nazwa</td><td>{{idBuyer.value.firstName ? idBuyer.value.firstName + ' ' + idBuyer.value.lastName : idBuyer.value.fullName}}</td></tr>
           <tr><td>Adres</td><td ng-bind-html="idBuyer.value.address | addressPresenter"></td></tr>
         </table>
       </div>
     </div>
-    <div class="row">
-      <div class="span6"></div>
-      <div class="span3" ng-show="idSeller.value.nip">
+    <div class="">
+      <div class="col-md-6"></div>
+      <div class="col-md-3" ng-show="idSeller.value.nip">
         <table class="table table-condensed details-table">
           <tr ng-show="buyer.nip"><td>NIP</td><td>{{idBuyer.value.nip}}</td></tr>
           <tr ng-show="buyer.regon"><td>Regon</td><td>{{idBuyer.value.regon}}</td></tr>
@@ -53,7 +49,7 @@
       </div>
     </div>
 
-    <div class="row"><div class="span12"><hr/></div></div>
+    <div class=""><div class="col-md-12"><hr/></div></div>
 
     <div ng-include="cashDocumentBodyUrl"></div>
   </form>

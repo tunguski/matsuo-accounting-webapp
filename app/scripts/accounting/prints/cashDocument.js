@@ -98,19 +98,19 @@ angular.module('mt.accounting')
           $scope.setTitle('<span><span class="comment" translate="cashDocument.title.{{printTypeService.printTypeSpecial(entity)}}"></span>'
               + '<span class="comment">: </span>{{entity.fields.number}}</span>', $scope);
 
-          $scope.cashDocumentBodyUrl = '/views/prints/' + printTypeService.printType(print) + '.jsp';
+          $scope.cashDocumentBodyUrl = '/views/prints/' + printTypeService.printType(print) + '.html';
           $scope.loadBuyer($scope.entity.fields['buyer.id']);
 
           $scope.loadSeller(print.fields['seller.id']);
           $scope.recalculateSummaries();
         });
       } else if ($routeParams.type) {
-        $scope.cashDocumentBodyUrl = '/views/prints/' + $routeParams.type + '.jsp';
+        $scope.cashDocumentBodyUrl = '/views/prints/' + $routeParams.type + '.html';
         // bez $scope._loadData.resolve(), ponieważ poszczególne druki mają różne zachowanie
         // implementować w createEmptyEntity()
       } else if ($routeParams.idCorrectedPrint) {
         $scope.correctedEntity = CashDocument.get({ idCashDocument: $routeParams.idCorrectedPrint }, function(print) {
-          $scope.cashDocumentBodyUrl = '/views/prints/corrective' + _.capitalize(printTypeService.printType(print)) + '.jsp';
+          $scope.cashDocumentBodyUrl = '/views/prints/corrective' + _.capitalize(printTypeService.printType(print)) + '.html';
           $scope._loadData.resolve();
         });
       } else {

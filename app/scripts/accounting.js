@@ -11,7 +11,7 @@ angular.module('mt.accounting', ['mt.webapp', 'mt.cashRegisterService'])
                 url: '/actualCashRegister/:idCashRegister'
               }
             }
-	  })
+	        })
           .define('CashRegisterReport', {
             additionalFunctions: {
               reportForCashRegister: {
