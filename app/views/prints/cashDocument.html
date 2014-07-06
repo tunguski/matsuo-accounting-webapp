@@ -1,9 +1,9 @@
 <div ng-controller="CashDocumentController">
 
   <form name="form" class="form-horizontal">
-    <div class=""><div class="col-md-12"><h4>Podstawowe dane</h4></div></div>
+    <div class="row"><div class="col-md-12"><h4>Podstawowe dane</h4></div></div>
 
-    <div class="">
+    <div class="row">
       <div class="col-md-6">
         <div mt-form-part="pl.matsuo.accounting.model.print.Invoice">
           <div mtf-ng-disabled="true" mt-html-name="seller.id" mt-form-field="idSeller" />
@@ -24,9 +24,9 @@
       </div>
     </div>
 
-    <div class=""><div class="col-md-12"><hr/></div></div>
+    <div class="row"><div class="col-md-12"><hr/></div></div>
 
-    <div class="">
+    <div class="row">
       <div class="col-md-6">
         <div mt-form-part="pl.matsuo.accounting.model.print.Invoice">
           <div mtf-ng-disabled="true" mt-html-name="buyer.id" mt-form-field="idBuyer" />
@@ -39,7 +39,7 @@
         </table>
       </div>
     </div>
-    <div class="">
+    <div class="row">
       <div class="col-md-6"></div>
       <div class="col-md-3" ng-show="idSeller.value.nip">
         <table class="table table-condensed details-table">
@@ -49,7 +49,7 @@
       </div>
     </div>
 
-    <div class=""><div class="col-md-12"><hr/></div></div>
+    <div class="row"><div class="col-md-12"><hr/></div></div>
 
     <div ng-include="cashDocumentBodyUrl"></div>
   </form>
@@ -57,7 +57,7 @@
 
   <div class="form-actions">
     <a class="btn btn-primary" ng-click="save()" translate="save"></a>
-    <a class="btn" href="javascript:;" onclick="window.history.back()" translate="cancel"></a>
+    <a class="btn btn-default" href="javascript:;" onclick="window.history.back()" translate="cancel"></a>
 
     <div ng-show="entity.id" download-button="entity" />
 
