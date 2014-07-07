@@ -8,11 +8,12 @@ angular.module('mt.cashRegisterService', [])
       var cashRegisterService = {
         getCashRegister: function() {
           var deferred = $q.defer();
-	  CashRegister.actualCashRegister(function (cashRegister) {
-            cashRegisterService.cashRegister = cashRegister;
-            if (cashRegister) {
+	        CashRegister.actualCashRegister(function (cashRegister) {
+            if (cashRegister && cashRegister.id) {
+              cashRegisterService.cashRegister = cashRegister;
               deferred.resolve(cashRegister);
             } else {
+              cashRegisterService.cashRegister = null;
               deferred.reject();
             }
           });
