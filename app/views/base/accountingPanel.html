@@ -1,7 +1,29 @@
 <div ng-controller="AccountingPanelCtrl">
 
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-sm-2">
+      <div class="chart">
+        <div class="percentage easyPieChart" easypiechart options="firstOptions" percent="firstPercent">
+          <span>{{ firstPercent }}</span>
+        </div>
+        <div class="title">Title first</div>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="chart">
+        <div class="percentage easyPieChart" easypiechart options="secondOptions" percent="secondPercent">
+          <span>{{ secondPercent }}</span>
+        </div>
+        <div class="title">Title second</div>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="chart">
+        <div class="percentage easyPieChart" easypiechart options="thirdOptions" percent="thirdPercent">
+          <span>{{ thirdPercent }}</span>
+        </div>
+        <div class="title">Title third</div>
+      </div>
     </div>
   </div>
 
