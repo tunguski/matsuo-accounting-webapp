@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name mt.accounting.controller:CashRegisterReportController
+ * @name mt.accounting.controller:CashRegisterReportCtrl
  * @description
- * # CashRegisterReportController
+ * # CashRegisterReportCtrl
  * Controller of the mt.accounting
  */
 angular.module('mt.accounting')
-    .controller('CashRegisterReportController', function ($scope, $routeParams, $location, printTypeService, CashRegisterReport, User) {
+    .controller('CashRegisterReportCtrl', function ($scope, $routeParams, $location, printTypeService, CashRegisterReport, User) {
       $scope.printTypeService = printTypeService;
 
 

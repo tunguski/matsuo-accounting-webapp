@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name mt.accounting.controller:WithdrawSlipController
+ * @name mt.accounting.controller:WithdrawSlipCtrl
  * @description
- * # WithdrawSlipController
+ * # WithdrawSlipCtrl
  * Controller of the mt.accounting
  */
 angular.module('mt.accounting')
-    .controller('WithdrawSlipController', function ($scope, WithdrawSlip, CashRegisterReport, $routeParams) {
+    .controller('WithdrawSlipCtrl', function ($scope, WithdrawSlip, CashRegisterReport, $routeParams) {
       function createEmptyEntity(scope) {
         scope.entity = new WithdrawSlip({
           fields: {

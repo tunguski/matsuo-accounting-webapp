@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc function
- * @name mt.accounting.controller:InvoiceController
+ * @name mt.accounting.controller:InvoiceCtrl
  * @description
- * # InvoiceController
+ * # InvoiceCtrl
  * Controller of the mt.accounting
  */
 angular.module('mt.accounting')
-    .controller('InvoiceController', function ($scope, $routeParams, $http, Invoice) {
-      abstractInvoiceController($scope, $routeParams, $http);
+    .controller('InvoiceCtrl', function ($scope, $routeParams, $http, Invoice) {
+      abstractInvoiceCtrl($scope, $routeParams, $http);
 
 
       $scope.addInvoicePosition = function() {
@@ -46,7 +46,7 @@ angular.module('mt.accounting')
     });
 
 
-function abstractInvoiceController($scope) {
+function abstractInvoiceCtrl($scope) {
 
 
   $scope.calculateValue = function(position, fn) {

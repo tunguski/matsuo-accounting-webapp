@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc function
- * @name mt.accounting.controller:CorrectiveInvoiceController
+ * @name mt.accounting.controller:CorrectiveInvoiceCtrl
  * @description
- * # CorrectiveInvoiceController
+ * # CorrectiveInvoiceCtrl
  * Controller of the mt.accounting
  */
 angular.module('mt.accounting')
-    .controller('CorrectiveInvoiceController', function ($scope, $routeParams, $http, CorrectiveInvoice) {
-      abstractInvoiceController($scope, $routeParams, $http);
+    .controller('CorrectiveInvoiceCtrl', function ($scope, $routeParams, $http, CorrectiveInvoice) {
+      abstractInvoiceCtrl($scope, $routeParams, $http);
 
 
       $scope.addInvoicePosition = function() {

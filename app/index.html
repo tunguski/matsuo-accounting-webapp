@@ -30,7 +30,7 @@
     <title ng-bind-html="title">Accounting Sample App</title>
   </head>
 
-  <body ng-controller="AppController">
+  <body ng-controller="AppCtrl">
 
   <!-- top menu -->
   <div ng-show="isLoggedIn()" role="navigation"
@@ -39,7 +39,7 @@
   </div>
 
   <!-- page title -->
-  <header id="overview" ng-show="isLoggedIn()" ng-controller="HeaderController" class="subhead hidden-on-startup">
+  <header id="overview" ng-show="isLoggedIn()" ng-controller="HeaderCtrl" class="subhead hidden-on-startup">
     <div class="container relative">
       <a href="javascript:;" onclick="window.history.back()" class="fa fa-reply back-link"></a>
       <h3 ng-bind-html="title"></h3>

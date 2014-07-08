@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name mt.accounting.controller:DepositSlipController
+ * @name mt.accounting.controller:DepositSlipCtrl
  * @description
- * # DepositSlipController
+ * # DepositSlipCtrl
  * Controller of the mt.accounting
  */
 angular.module('mt.accounting')
-    .controller('DepositSlipController', function ($scope, DepositSlip, CashRegisterReport, $routeParams) {
+    .controller('DepositSlipCtrl', function ($scope, DepositSlip, CashRegisterReport, $routeParams) {
       function createEmptyEntity(scope) {
         scope.entity = new DepositSlip({
           fields: {

@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name mt.accounting.controller:CashRegisterReportsController
+ * @name mt.accounting.controller:CashRegisterReportsCtrl
  * @description
- * # CashRegisterReportsController
+ * # CashRegisterReportsCtrl
  * Controller of the mt.accounting
  */
 angular.module('mt.accounting')
-    .controller('CashRegisterReportsController', function ($scope, $http, $routeParams, $timeout, CashRegister, CashRegisterReport) {
+    .controller('CashRegisterReportsCtrl', function ($scope, $http, $routeParams, $timeout, CashRegister, CashRegisterReport) {
       $scope.setTitle("Raporty kasowe");
 
       $scope.cashRegisterReports = CashRegisterReport.query({}, function (data) {

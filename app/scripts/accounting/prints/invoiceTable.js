@@ -2,9 +2,9 @@
 
 /**
  * @ngdoc function
- * @name mt.accounting.controller:InvoiceTableController
+ * @name mt.accounting.controller:InvoiceTableCtrl
  * @description
- * # InvoiceTableController
+ * # InvoiceTableCtrl
  * Controller of the mt.accounting
  */
 angular.module('mt.accounting')
