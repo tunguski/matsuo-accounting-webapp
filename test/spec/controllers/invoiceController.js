@@ -1,7 +1,7 @@
 'use strict';
 
-describe('InvoiceController', function () {
-  var controller, documentController;
+describe('InvoiceCtrl', function () {
+  var controller, documentCtrl;
 
   beforeEach(inject(function ($httpBackend, $rootScope, $controller) {
     var routeParams = {
@@ -50,8 +50,8 @@ describe('InvoiceController', function () {
     http.expectGET('/api/payers/898').respond({});
 
 
-    controller = $controller('CashDocumentController', { $scope: scope, $routeParams: routeParams });
-    documentController = $controller('InvoiceController', {$scope: scope, $routeParams: routeParams });
+    controller = $controller('CashDocumentCtrl', { $scope: scope, $routeParams: routeParams });
+    documentCtrl = $controller('InvoiceCtrl', {$scope: scope, $routeParams: routeParams });
 
     http.flush();
   }));

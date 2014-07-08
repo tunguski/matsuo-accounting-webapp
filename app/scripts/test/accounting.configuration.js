@@ -3,9 +3,9 @@
 angular.module('mt.accounting')
     .config(function(userGroupConfigurationProvider) {
       userGroupConfigurationProvider.groupToDefaultRoute.pushArray(
-          [{ groupName: 'ADMIN', defaultRoute: '/base/registration'},
+          [{ groupName: 'ADMIN', defaultRoute: '/base/accountingPanel'},
             { groupName: 'DOCTOR', defaultRoute: '/doctors/schedule_today'},
-            { groupName: '', defaultRoute: '/base/registration'}]);
+            { groupName: '', defaultRoute: '/base/accountingPanel'}]);
     })
 
     .run(function (menuService) {

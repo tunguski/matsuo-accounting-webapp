@@ -1,7 +1,7 @@
 'use strict';
 
-describe('WithdrawSlipController', function () {
-  var controller, documentController;
+describe('WithdrawSlipCtrl', function () {
+  var controller, documentCtrl;
 
   beforeEach(inject(function ($httpBackend, $rootScope, $controller) {
     var routeParams = {
@@ -44,8 +44,8 @@ describe('WithdrawSlipController', function () {
     http.expectGET('/api/payers/898').respond({});
 
 
-    controller = $controller('CashDocumentController', { $scope: scope, $routeParams: routeParams });
-    documentController = $controller('WithdrawSlipController', {$scope: scope, $routeParams: routeParams });
+    controller = $controller('CashDocumentCtrl', { $scope: scope, $routeParams: routeParams });
+    documentCtrl = $controller('WithdrawSlipCtrl', {$scope: scope, $routeParams: routeParams });
 
     http.flush();
   }));
