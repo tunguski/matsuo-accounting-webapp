@@ -19,6 +19,7 @@ module.exports = function(config) {
       'bower_components/underscore/underscore.js',
       'bower_components/select2/select2.js',
       'bower_components/moment/moment.js',
+      'bower_components/jquery.easy-pie-chart/dist/easypiechart.js',
 
       'bower_components/angular/angular.js',
       'bower_components/angular-sanitize/angular-sanitize.js',
@@ -27,6 +28,7 @@ module.exports = function(config) {
       'bower_components/angular-translate/angular-translate.js',
       'bower_components/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js',
       'bower_components/angular-ui-select2/src/select2.js',
+      'bower_components/jquery.easy-pie-chart/dist/angular.easypiechart.js',
 
       'bower_components/matsuo-js-util/matsuo-js-util.js',
       'bower_components/matsuo-ng-route/matsuo-ng-route.js',
