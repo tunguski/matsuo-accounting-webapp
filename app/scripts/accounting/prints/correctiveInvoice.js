@@ -8,7 +8,7 @@
  * Controller of the mt.accounting
  */
 angular.module('mt.accounting')
-    .controller('CorrectiveInvoiceCtrl', function ($scope, $routeParams, $http, CorrectiveInvoice) {
+    .controller('CorrectiveInvoiceCtrl', function ($scope, $routeParams, $http, abstractInvoiceCtrl, CorrectiveInvoice) {
       abstractInvoiceCtrl($scope, $routeParams, $http);
 
 

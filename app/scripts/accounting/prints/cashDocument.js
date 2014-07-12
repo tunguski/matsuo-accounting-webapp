@@ -146,10 +146,7 @@ angular.module('mt.accounting')
         $scope.entity.elements = _.without($scope.entity.elements, position);
         $scope.recalculateSummaries();
       }
-    });
-
-
-angular.module('mt.ui')
+    })
     .factory('printTypeService', function() {
       var service = {
         /**

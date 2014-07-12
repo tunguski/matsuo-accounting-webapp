@@ -1,53 +1,46 @@
 <div ng-controller="AccountingPanelCtrl">
 
   <div class="row">
-    <div class="col-md-12">
-      <div class="flot flot-height-100" flot-chart="optionsForFlot" ng-model="flotChartData"></div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-12">
-      <div class="flot flot-height-100" flot-chart="optionsForFlot2" ng-model="flotChartData2"></div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-3">
-      <div rounded-icon-box></div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="chart-box">
-        <div>
-          <div class="percentage easyPieChart" easypiechart options="firstOptions" percent="firstPercent">
-            <span>{{ firstPercent }}</span>
-          </div>
-          <div class="title">Title first</div>
-        </div>
+    <div class="col-sm-2">
+      <div class="list-group">
+        <a class="list-group-item" href="#/prints/cashDocument?type=invoice">Wystaw fakturę</a>
+        <a class="list-group-item" href="#/prints/cashDocument?type=invoice">Przyjmij fakturę</a>
+        <a class="list-group-item" href="#/prints/cashDocument?type=withdrawSlip">Dodaj koszt</a>
       </div>
     </div>
-    <div class="col-sm-4">
-      <div class="chart-box">
-        <div>
-          <div class="percentage easyPieChart" easypiechart options="secondOptions" percent="secondPercent">
-            <span>{{ secondPercent }}</span>
-          </div>
-          <div class="title">Title second</div>
+    <div class="col-md-10">
+
+      <div class="row">
+        <div class="col-md-12">
+          <tabset type="pills">
+            <tab heading="test1">
+              <div>test1</div>
+            </tab>
+            <tab heading="test2">
+              <div>test2</div>
+            </tab>
+            <tab heading="test3">
+              <div>test3</div>
+            </tab>
+            <tab heading="test4">
+              <div>test4</div>
+            </tab>
+          </tabset>
         </div>
       </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="chart-box">
-        <div>
-          <div class="percentage easyPieChart" easypiechart options="thirdOptions" percent="thirdPercent">
-            <span>{{ thirdPercent }}</span>
-          </div>
-          <div class="title">Title third</div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <h4>Podsumowanie 30 dni</h4>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="flot flot-height-100" flot-chart="optionsForFlot" ng-model="flotChartData"></div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

@@ -24,8 +24,9 @@
     -->
     <link rel="stylesheet" href="../bower_components/matsuo-core-webapp/app/styles/html.css">
     <link rel="stylesheet" href="../bower_components/matsuo-core-webapp/app/styles/bootstrap-modifications.css">
-    <link rel="stylesheet" href="../bower_components/matsuo-core-webapp/app/styles/matsuo-core.css">
     <link rel="stylesheet" href="../bower_components/matsuo-core-webapp/app/styles/jquery.easy-pie-chart.css">
+    <link rel="stylesheet" href="../bower_components/matsuo-core-webapp/app/styles/matsuo-core.css">
+    <link rel="stylesheet" href="styles/accounting.css">
     <!-- endbuild -->
 
     <title ng-bind-html="title">Accounting Sample App</title>
@@ -41,7 +42,7 @@
 
   <!-- page title -->
   <header id="overview" ng-show="isLoggedIn()" ng-controller="HeaderCtrl" class="subhead hidden-on-startup">
-    <div class="container relative">
+    <div class="container-fluid relative">
       <a href="javascript:;" onclick="window.history.back()" class="fa fa-reply back-link"></a>
       <h3 ng-bind-html="title"></h3>
       <a class="fa fa-info-circle help-icon" data-toggle="modal" ng-click="showHelp()"></a>
@@ -49,11 +50,12 @@
   </header>
 
   <!-- login view -->
-  <div ng-show="isLoggedOff()" class="container login-panel" ng-include="'/views/login/login.html'">
+  <div ng-show="isLoggedOff()" ng-controller="LoginCtrl" class="container-fluid login-panel"
+       ng-include="'/views/login/login.html'">
   </div>
 
   <!-- main panel (message panel + content panel) -->
-  <div ng-show="isLoggedIn()" class="container hidden-on-startup">
+  <div ng-show="isLoggedIn()" class="container-fluid hidden-on-startup">
     <section class="message-panel"></section>
     <section class="main-panel" ng-view></section>
   </div>
@@ -63,7 +65,7 @@
 
   <!-- footer -->
   <footer class="footer">
-    <div class="container">
+    <div class="container-fluid">
       <p>Apache License 2.0 <br/>
         Created by Matuo IT 2012 - {{actualYear}}</p>
       <p class="icons">
