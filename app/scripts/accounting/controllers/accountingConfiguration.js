@@ -14,6 +14,10 @@ angular.module('mt.accounting')
         divisionsEnabled: false
       };
 
+      $scope.groups = function (user) {
+        return _.pluck(user.groups, 'name').join(', ');
+      };
+
       CashRegister.query({}, function (cashRegisters) {
         $scope.cashRegisters = cashRegisters;
       });

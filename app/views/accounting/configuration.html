@@ -3,17 +3,51 @@
   <div class="row">
     <div class="col-sm-4">
       <h4>Podstawowe</h4>
+
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" ng-model="configuration.divisionsEnabled"> Wiele oddziałów
+        </label>
+      </div>
+
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" ng-model="configuration.manyCashRegisters"> Wiele kas
+        </label>
+      </div>
     </div>
     <div class="col-sm-4">
       <h4>System podatkowy</h4>
+
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" ng-model="configuration.lineTax"> Podatek liniowy
+        </label>
+      </div>
     </div>
     <div class="col-sm-4">
       <h4>Inne</h4>
+
     </div>
   </div>
 
   <div class="row">
     <div class="col-sm-12">
+      <a class="btn btn-primary">Zapisz</a>
+      <a class="btn btn-default">Anuluj</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+    </div>
+  </div>
+
+  <!-- fixme to remove -->
+
+  <div class="row">
+    <div class="col-sm-12">
+
       <h4>Kasy</h4>
       <table class="table table-condensed">
         <thead>
@@ -53,7 +87,7 @@
           <td>{{ $index + 1 }}.</td>
           <td>{{ user.person.firstName + ' ' + user.person.lastName }}</td>
           <td>{{ user.username }}</td>
-          <td>{{ user.groups }}</td>
+          <td>{{ groups(user) }}</td>
           <td></td>
         </tr>
       </table>

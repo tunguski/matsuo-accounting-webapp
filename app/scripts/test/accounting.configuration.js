@@ -1,6 +1,9 @@
 'use strict';
 
 angular.module('mt.accounting')
+    .run(function($rootScope) {
+      $rootScope.appName = 'Księgowość';
+    })
     .config(function(userGroupConfigurationProvider) {
       userGroupConfigurationProvider.groupToDefaultRoute.pushArray(
           [{ groupName: 'ADMIN', defaultRoute: '/base/accountingPanel'},
