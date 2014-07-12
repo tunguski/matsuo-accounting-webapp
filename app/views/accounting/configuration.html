@@ -1,0 +1,87 @@
+<div ng-controller="AccountingConfigurationCtrl">
+
+  <div class="row">
+    <div class="col-sm-4">
+      <h4>Podstawowe</h4>
+    </div>
+    <div class="col-sm-4">
+      <h4>System podatkowy</h4>
+    </div>
+    <div class="col-sm-4">
+      <h4>Inne</h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h4>Kasy</h4>
+      <table class="table table-condensed">
+        <thead>
+        <tr>
+          <th>Nr</th>
+          <th>Kod</th>
+          <th>Oddział</th>
+          <th>Funkcje</th>
+        </tr>
+        </thead>
+
+        <tr ng-repeat="cashRegister in cashRegisters">
+          <td>{{ $index + 1 }}.</td>
+          <td>{{ cashRegister.code }}</td>
+          <td>{{ cashRegister.reckoningParty.fullName }}</td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h4>Pracownicy</h4>
+      <table class="table table-condensed">
+        <thead>
+        <tr>
+          <th>Nr</th>
+          <th>Imię i nazwisko</th>
+          <th>Login</th>
+          <th>Grupy</th>
+          <th>Funkcje</th>
+        </tr>
+        </thead>
+
+        <tr ng-repeat="user in users">
+          <td>{{ $index + 1 }}.</td>
+          <td>{{ user.person.firstName + ' ' + user.person.lastName }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.groups }}</td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h4>Oddziały</h4>
+      <table class="table table-condensed">
+        <thead>
+          <tr>
+            <th>Nr</th>
+            <th>Nazwa</th>
+            <th>Skrót</th>
+            <th>Nadrzędny</th>
+            <th>Funkcje</th>
+          </tr>
+        </thead>
+
+        <tr ng-repeat="organizationUnit in organizationUnits">
+          <td>{{ $index + 1 }}.</td>
+          <td>{{ organizationUnit.fullName }}</td>
+          <td>{{ organizationUnit.shortName }}</td>
+          <td>{{ organizationUnit.idParent }}</td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
