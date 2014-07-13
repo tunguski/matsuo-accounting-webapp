@@ -35,6 +35,7 @@ angular.module('mt.accounting')
 
 
       function configureReport(report) {
+        $scope.entity = report;
         angular.forEach(report.prints, function (print) {
           print.printSimpleClassName = print.printClass.split('.').pop();
         });
@@ -46,11 +47,11 @@ angular.module('mt.accounting')
         $scope.setTitle("<span><span class='comment'>Raport kasowy kasy </span>{{entity.cashRegister.code}} " +
             "<span class='comment'>z dnia</span> {{entity.createdTime | formatDate}}</span>", $scope);
 
-        $scope.entity = CashRegisterReport.get({ idCashRegisterReport : $routeParams.idEntity }, configureReport);
+        CashRegisterReport.get({ idCashRegisterReport : $routeParams.idEntity }, configureReport);
 
       } else if ($routeParams.idCashRegister) {
         $scope.setTitle("<span><span class='comment'>Nowy raport kasowy dla: </span>{{entity.cashRegister.code}}</span>", $scope);
 
-        $scope.entity = CashRegisterReport.reportForCashRegister({ idCashRegister : $routeParams.idCashRegister }, configureReport);
+        CashRegisterReport.reportForCashRegister({ idCashRegister : $routeParams.idCashRegister }, configureReport);
       }
     });
