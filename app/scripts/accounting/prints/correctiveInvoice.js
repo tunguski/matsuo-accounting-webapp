@@ -34,8 +34,6 @@ angular.module('mt.accounting')
 
           scope.loadBuyer(scope.entity.fields['buyer.id']);
         });
-
-        $scope._loadData.resolve();
       }
 
 

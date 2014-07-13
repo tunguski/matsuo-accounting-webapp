@@ -30,8 +30,6 @@ angular.module('mt.accounting')
             });
           });
         }
-
-        $scope._loadData.resolve();
       }
 
 

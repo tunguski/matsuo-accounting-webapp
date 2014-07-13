@@ -21,6 +21,7 @@ angular.module('mt.accounting')
         }
       }
 
+      // if it's not cashReport
       if (!$routeParams.idCashReport) {
         $scope.$watch('cashRegisterService.cashRegister', sellerFromCashRegister);
       }
@@ -41,21 +42,29 @@ angular.module('mt.accounting')
       $scope.guestPrintClass = function() {
         return 'pl.matsuo.accounting.model.print.' + ($routeParams.idCorrectedPrint
             ? 'Corrective' + _.capitalize(printTypeService.printType($scope.correctedEntity)) : _.capitalize($routeParams.type));
-      }
+      };
 
 
+      /**
+       * Function that makes possible to define specific logic for each print type.
+       * @param pluginFunction
+       */
       $scope.pluginPrintLogic = function (pluginFunction) {
         pluginFunction($scope);
 
+        /**
+         * Takes actual cash register or cash register defined in url and sets seller from it.
+         */
         function updateCashRegister() {
           $scope.entity.idCashRegisterReport = $routeParams.idCashReport;
 
-          // dodawanie tworzonego dokumentu do z góry ustalonego raportu kasowego
           if ($routeParams.idCashReport) {
+            // loading cash register to set seller from it
             CashRegisterReport.get({ idCashRegisterReport: $routeParams.idCashReport }, function (cashReport) {
               sellerFromCashRegister(cashReport.cashRegister);
             });
           } else {
+            // seller is set from actual cash register
             sellerFromCashRegister(cashRegisterService.cashRegister);
           }
         }
@@ -67,7 +76,8 @@ angular.module('mt.accounting')
             $scope.entity.printClass = $scope.guestPrintClass();
           }
 
-          $scope._loadData.promise.then(function () { updateCashRegister(); });
+          updateCashRegister();
+          $scope._loadData.resolve();
         }
 
         if (!$routeParams.idEntity) {
@@ -83,7 +93,7 @@ angular.module('mt.accounting')
         $scope._loadData.promise.then(function () {
           $scope.recalculateSummaries();
         });
-      }
+      };
 
 
       $scope._loadData = $q.defer();
