@@ -1,47 +1,32 @@
 <div ng-controller="AccountingPanelCtrl">
+  <div class="row">
+    <div class="col-md-12">
+      <tabset type="pills">
+        <tab heading="test1">
+          <div>test1</div>
+        </tab>
+        <tab heading="test2">
+          <div>test2</div>
+        </tab>
+        <tab heading="test3">
+          <div>test3</div>
+        </tab>
+        <tab heading="test4">
+          <div>test4</div>
+        </tab>
+      </tabset>
+    </div>
+  </div>
 
   <div class="row">
-    <div class="col-sm-2">
-      <div class="list-group">
-        <a class="list-group-item" href="#/prints/cashDocument?type=invoice">Wystaw fakturę</a>
-        <a class="list-group-item" href="#/prints/cashDocument?type=invoice">Przyjmij fakturę</a>
-        <a class="list-group-item" href="#/prints/cashDocument?type=withdrawSlip">Dodaj koszt</a>
-        <a class="list-group-item" href="#/accounting/configuration">Konfiguracja</a>
-      </div>
+    <div class="col-md-12">
+      <h4>Podsumowanie 30 dni</h4>
     </div>
-    <div class="col-md-10">
+  </div>
 
-      <div class="row">
-        <div class="col-md-12">
-          <tabset type="pills">
-            <tab heading="test1">
-              <div>test1</div>
-            </tab>
-            <tab heading="test2">
-              <div>test2</div>
-            </tab>
-            <tab heading="test3">
-              <div>test3</div>
-            </tab>
-            <tab heading="test4">
-              <div>test4</div>
-            </tab>
-          </tabset>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12">
-          <h4>Podsumowanie 30 dni</h4>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12">
-          <div class="flot flot-height-100" flot-chart="optionsForFlot" ng-model="flotChartData"></div>
-        </div>
-      </div>
-
+  <div class="row">
+    <div class="col-md-12">
+      <div class="flot flot-height-100" flot-chart="optionsForFlot" ng-model="flotChartData"></div>
     </div>
   </div>
 </div>
