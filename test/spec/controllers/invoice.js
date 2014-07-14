@@ -19,7 +19,7 @@ describe('InvoiceCtrl', function () {
 
 
     it('save', function () {
-      http.expectPOST('/api/invoices').respond('', { 'Location': '/cashDocuments/invoice/7' });
+      http.expectPOST('/api/invoices').respond('', { Location: '/cashDocuments/invoice/7' });
 
       scope.save();
 
@@ -90,7 +90,7 @@ describe('InvoiceCtrl', function () {
 
 
     it('save', function () {
-      http.expectPUT('/api/cashDocuments').respond('', { 'Location': '/cashDocuments/invoice/7' });
+      http.expectPUT('/api/cashDocuments').respond('', { Location: '/cashDocuments/invoice/7' });
 
       scope.save();
 

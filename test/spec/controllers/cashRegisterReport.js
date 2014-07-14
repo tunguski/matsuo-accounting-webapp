@@ -48,13 +48,13 @@ describe('CashRegisterReportCtrl', function () {
 
 
     it('load', function () {
-      http.expectGET('/api/cashRegisterReports/11').respond(angular.toJson({
+      http.expectGET('/api/cashRegisterReports/11').respond({
         id: 11,
         prints: [
           { printClass: 'com.test.Print' },
           { printClass: 'com.test.Print' }
         ]
-      }));
+      });
 
       http.flush();
     });
@@ -71,9 +71,9 @@ describe('CashRegisterReportCtrl', function () {
 
 
     it('load', function () {
-      http.expectGET('/api/cashRegisterReports/reportForCashRegister/11').respond(angular.toJson({
+      http.expectGET('/api/cashRegisterReports/reportForCashRegister/11').respond({
         id: 11
-      }));
+      });
 
       http.flush();
     });

@@ -41,7 +41,8 @@ angular.module('mt.accounting')
 
       $scope.guestPrintClass = function() {
         return 'pl.matsuo.accounting.model.print.' + ($routeParams.idCorrectedPrint
-            ? 'Corrective' + _.capitalize(printTypeService.printType($scope.correctedEntity)) : _.capitalize($routeParams.type));
+            ? 'Corrective' + _.capitalize(printTypeService.printType($scope.correctedEntity) || '')
+            : _.capitalize($routeParams.type || ''));
       };
 
 
@@ -90,9 +91,7 @@ angular.module('mt.accounting')
           $scope.setTitle('<span translate="cashDocument.newTitle.{{printTypeService.printTypeSpecial(entity)}}"></span>', $scope);
         }
 
-        $scope._loadData.promise.then(function () {
-          $scope.recalculateSummaries();
-        });
+        $scope._loadData.promise.then($scope.recalculateSummaries);
       };
 
 

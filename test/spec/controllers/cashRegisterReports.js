@@ -9,8 +9,8 @@ describe('CashRegisterReportsCtrl', function () {
 
 
   it('', function () {
-    http.expectGET('/api/cashRegisterReports').respond(angular.toJson([{ id: 1 }]));
-    http.expectGET('/api/cashRegisters').respond(angular.toJson([{ id: 1 }]));
+    http.expectGET('/api/cashRegisterReports').respond([{ id: 1 }]);
+    http.expectGET('/api/cashRegisters').respond([{ id: 1 }]);
 
     http.flush();
   });
