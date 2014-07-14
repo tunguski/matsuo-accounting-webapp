@@ -38,8 +38,6 @@ angular.module('mt.accounting')
             },
             elements: []
           });
-
-          $scope._loadData.resolve();
         };
       });
     })

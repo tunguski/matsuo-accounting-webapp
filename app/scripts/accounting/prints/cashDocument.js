@@ -144,7 +144,7 @@ angular.module('mt.accounting')
       $scope.save = saveOrUpdate($scope, 'entity',
           function(entity, headers) {
             toastr.success($filter('translate')('cashDocument.saved.' + printTypeService.printTypeSpecial($scope.entity)));
-            $scope.entity.id = parseInt(lastUrlElement(headers));
+            $scope.entity.id = parseInt(_.lastUrlElement(headers));
             $location.url('/prints/cashDocument/' + $scope.entity.id);
             $location.replace();
           },

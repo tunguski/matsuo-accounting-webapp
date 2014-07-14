@@ -29,7 +29,7 @@ angular.module('mt.accounting')
         $scope.entity.cashRegister.reckoningParty = null;
         $scope.entity.$save(function (entity, headers) {
           $location.replace();
-          $location.url('/cash/cashRegisterReport/' + lastUrlElement(headers));
+          $location.url('/cash/cashRegisterReport/' + _.lastUrlElement(headers));
         });
       }
 
