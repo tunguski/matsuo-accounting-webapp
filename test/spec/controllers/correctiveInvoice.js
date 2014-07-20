@@ -40,7 +40,7 @@ describe('CorrectiveInvoiceCtrl', function () {
 
 
     it('save', function () {
-      http.expectPUT('/api/correctiveInvoices').respond('', { Location: '/cashDocuments/invoice/7' });
+      http.expectPUT('/api/cashDocuments').respond('', { Location: '/cashDocuments/invoice/7' });
 
       scope.save();
 

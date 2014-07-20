@@ -3,7 +3,14 @@
 angular.module('mt.accounting', ['mt.webapp', 'mt.cashRegisterService'])
     .config(function (restFactoryProvider) {
       restFactoryProvider
-          .define('CashDocument')
+          .define('CashDocument', {
+            additionalFunctions: {
+              save: {
+                url: '/:documentType',
+                method: 'POST'
+              }
+            }
+          })
           .define('Payer')
           .define('CashRegister', {
             additionalFunctions: {
@@ -18,10 +25,6 @@ angular.module('mt.accounting', ['mt.webapp', 'mt.cashRegisterService'])
                 url: '/reportForCashRegister/:idCashRegister'
               }
             }
-          })
-          .define('CorrectiveInvoice')
-          .define('DepositSlip')
-          .define('WithdrawSlip')
-          .define('Invoice');
+          });
     })
 ;

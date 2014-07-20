@@ -8,7 +8,7 @@
  * Controller of the mt.accounting
  */
 angular.module('mt.accounting')
-    .controller('DepositSlipCtrl', function ($scope, DepositSlip, CashRegisterReport, $routeParams) {
+    .controller('DepositSlipCtrl', function ($scope, $routeParams, CashRegisterReport, CashDocument) {
       function createEmptyEntity(scope) {
         scope.entity = new DepositSlip({
           fields: {
@@ -61,6 +61,7 @@ angular.module('mt.accounting')
 
 
       $scope.pluginPrintLogic(function (scope) {
+        scope.documentType = 'depositSlip';
         scope.recalculateSummaries = recalculateSummaries;
         scope.createEmptyEntity = createEmptyEntity;
       });

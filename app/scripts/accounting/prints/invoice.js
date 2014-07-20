@@ -8,7 +8,7 @@
  * Controller of the mt.accounting
  */
 angular.module('mt.accounting')
-    .controller('InvoiceCtrl', function ($scope, $routeParams, $http, abstractInvoiceCtrl, Invoice) {
+    .controller('InvoiceCtrl', function ($scope, $routeParams, $http, abstractInvoiceCtrl, CashDocument) {
       abstractInvoiceCtrl($scope, $routeParams, $http);
 
 
@@ -24,11 +24,12 @@ angular.module('mt.accounting')
 
 
       $scope.pluginPrintLogic(function (scope) {
+        scope.documentType = 'invoice';
         scope.recalculateSummaries = $scope.recalculateSummaries;
         scope.createEmptyEntity = function (scope) {
           scope.isInvoice = !$routeParams.receipt;
 
-          scope.entity = new Invoice({
+          scope.entity = new CashDocument({
             fields: {
               issuanceDate: moment().toISOString(),
               sellDate: moment().toISOString(),

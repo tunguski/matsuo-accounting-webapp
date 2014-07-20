@@ -8,9 +8,9 @@
  * Controller of the mt.accounting
  */
 angular.module('mt.accounting')
-    .controller('WithdrawSlipCtrl', function ($scope, WithdrawSlip, CashRegisterReport, $routeParams) {
+    .controller('WithdrawSlipCtrl', function ($scope, $routeParams, CashRegisterReport, CashDocument) {
       function createEmptyEntity(scope) {
-        scope.entity = new WithdrawSlip({
+        scope.entity = new CashDocument({
           fields: {
             issuanceDate: moment().toISOString(),
             sellDate: moment().toISOString(),
@@ -61,6 +61,7 @@ angular.module('mt.accounting')
 
 
       $scope.pluginPrintLogic(function (scope) {
+        scope.documentType = 'withdrawSlip';
         scope.recalculateSummaries = recalculateSummaries;
         scope.createEmptyEntity = createEmptyEntity;
       });

@@ -8,7 +8,7 @@
  * Controller of the mt.accounting
  */
 angular.module('mt.accounting')
-    .controller('CorrectiveInvoiceCtrl', function ($scope, $routeParams, $http, abstractInvoiceCtrl, CorrectiveInvoice) {
+    .controller('CorrectiveInvoiceCtrl', function ($scope, $routeParams, $http, abstractInvoiceCtrl, CashDocument) {
       abstractInvoiceCtrl($scope, $routeParams, $http);
 
 
@@ -25,7 +25,7 @@ angular.module('mt.accounting')
 
 
       function createEmptyEntity(scope) {
-        scope.entity = new CorrectiveInvoice();
+        scope.entity = new CashDocument();
 
         return $http.get('/api/correctiveInvoices/for_invoice/' + $routeParams.idCorrectedPrint).then(function(data) {
           $.extend(true, scope.entity, data.data);
@@ -43,6 +43,7 @@ angular.module('mt.accounting')
 
 
       $scope.pluginPrintLogic(function (scope) {
+        scope.documentType = 'correctiveInvoice';
         scope.recalculateSummaries = $scope.recalculateSummaries;
         scope.createEmptyEntity = createEmptyEntity;
       });

@@ -30,7 +30,7 @@ angular.module('mt.accounting')
         return function (idEntity) {
           Payer.get({ idPayer: idEntity }, scopeSetter($scope, field + '.value'));
         }
-      }
+      };
 
       $scope.loadSeller = $scope.loadPayer('idSeller');
       $scope.loadBuyer = $scope.loadPayer('idBuyer');
@@ -149,6 +149,9 @@ angular.module('mt.accounting')
           },
           function() {
             toastr.success($filter('translate')('cashDocument.updated.' + printTypeService.printTypeSpecial($scope.entity)));
+          },
+          function () {
+            return { documentType: $scope.documentType };
           });
 
       $scope.remove = function(position) {
