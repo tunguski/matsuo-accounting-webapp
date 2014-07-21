@@ -5,7 +5,23 @@ toastr = {
   info: function (msg) {
     console.log(msg);
   }
+};
+
+
+function containsAll() {
+  var args = arguments;
+  return function (data) {
+    var isValid = true;
+
+    angular.forEach(args, function (argument) {
+      expect(data).toContain(argument);
+      isValid = isValid && data.indexOf(argument) >= 0;
+    });
+
+    return isValid;
+  }
 }
+
 
 beforeEach(function () {
   jasmine.addMatchers({

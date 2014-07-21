@@ -31,7 +31,10 @@
     "it": false,
     "jasmine": false,
     "spyOn": false,
+    "containsAll": false,
+
     "toastr": false,
+
     "rootScope": false,
     "scope": false,
     "http": false,

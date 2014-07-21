@@ -3,6 +3,8 @@
 describe('InvoiceCtrl', function () {
   var controller, documentCtrl;
 
+  var checkRequest = containsAll('"issuanceDate"', '"sellDate"', '"dueDate', '"paymentType":"CASH"');
+
   describe('new', function () {
     beforeEach(inject(function ($httpBackend, $rootScope, $controller) {
       var routeParams = {
@@ -19,7 +21,7 @@ describe('InvoiceCtrl', function () {
 
 
     it('save', function () {
-      http.expectPOST('/api/cashDocuments/invoice').respond('', { Location: '/cashDocuments/invoice/7' });
+      http.expectPOST('/api/cashDocuments/invoice', checkRequest).respond('', { Location: '/cashDocuments/invoice/7' });
 
       scope.save();
 
@@ -36,7 +38,7 @@ describe('InvoiceCtrl', function () {
       var invoice = {'id': 1, 'createdTime': '2014-01-11T11:59:31Z',
         'fields': {
           'areCommentsVisible': 'true',
-          'paymentType': 'TRANSFER',
+          'paymentType': 'CASH',
           'seller.nip': '5361188849',
           'number': 'LEG/FV/2013/123456',
           'authenticityText': 'ORYGINAŁ',
@@ -90,7 +92,7 @@ describe('InvoiceCtrl', function () {
 
 
     it('save', function () {
-      http.expectPUT('/api/cashDocuments?documentType=invoice').respond('', { Location: '/cashDocuments/invoice/7' });
+      http.expectPUT('/api/cashDocuments?documentType=invoice', checkRequest).respond('', { Location: '/cashDocuments/invoice/7' });
 
       scope.save();
 
