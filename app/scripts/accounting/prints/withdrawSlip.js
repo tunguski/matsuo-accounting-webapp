@@ -11,11 +11,10 @@ angular.module('mt.accounting')
     .controller('WithdrawSlipCtrl', function ($scope, $routeParams, CashRegisterReport, CashDocument) {
       function createEmptyEntity(scope) {
         scope.entity = new CashDocument({
-          fields: {
-            issuanceDate: moment().toISOString(),
-            sellDate: moment().toISOString(),
-            dueDate: moment().toISOString()
-          },
+          issuanceDate: moment().toISOString(),
+          sellDate: moment().toISOString(),
+          dueDate: moment().toISOString(),
+          fields: {},
           elements: []
         });
 

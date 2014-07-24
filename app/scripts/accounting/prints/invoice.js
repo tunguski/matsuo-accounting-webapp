@@ -30,10 +30,10 @@ angular.module('mt.accounting')
           scope.isInvoice = !$routeParams.receipt;
 
           scope.entity = new CashDocument({
+            issuanceDate: moment().toISOString(),
+            sellDate: moment().toISOString(),
+            dueDate: moment().toISOString(),
             fields: {
-              issuanceDate: moment().toISOString(),
-              sellDate: moment().toISOString(),
-              dueDate: moment().toISOString(),
               paymentType: "CASH",
               isReceipt: !scope.isInvoice
             },
