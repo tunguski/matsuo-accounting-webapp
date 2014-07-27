@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('mt.accounting', ['mt.webapp', 'mt.cashRegisterService'])
-    .config(function (mtFormConfig) {
+    .run(function (mtFormConfig) {
       mtFormConfig.invoice = 'pl.matsuo.accounting.model.print.Invoice';
       mtFormConfig.accountingPrint = 'pl.matsuo.accounting.model.print.AccountingPrint';
       mtFormConfig.depositSlip = 'pl.matsuo.accounting.model.print.DepositSlip';
