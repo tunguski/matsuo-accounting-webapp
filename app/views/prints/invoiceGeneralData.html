@@ -1,19 +1,19 @@
 <div class="row">
   <div class="col-md-6">
-    <div mt-form-part="pl.matsuo.accounting.model.print.AccountingPrint">
+    <div mt-form-part="accountingPrint">
       <div mt-form-field="issuanceDate" />
     </div>
-    <div mt-form-part="pl.matsuo.accounting.model.print.Invoice" mt-entity-name="entity.fields">
+    <div mt-form-part="invoice" mt-entity-name="entity.fields">
       <div mt-form-field="sellPlace" />
     </div>
-    <div mt-form-part="pl.matsuo.accounting.model.print.AccountingPrint">
+    <div mt-form-part="accountingPrint">
       <div mt-form-field="sellDate" />
       <div mt-form-field="dueDate" />
     </div>
   </div>
 
   <div ng-show="isInvoice" class="col-md-6">
-    <div mt-form-part="pl.matsuo.accounting.model.print.Invoice" mt-entity-name="entity.fields">
+    <div mt-form-part="invoice" mt-entity-name="entity.fields">
       <div mt-form-field="number" />
       <div mt-form-field="paymentType" />
       <div mt-form-field="bankAccountNumber" />
@@ -21,7 +21,7 @@
     </div>
   </div>
   <div ng-show="!isInvoice" class="col-md-6">
-    <div mt-form-part="pl.matsuo.accounting.model.print.Invoice" mt-entity-name="entity.fields">
+    <div mt-form-part="invoice" mt-entity-name="entity.fields">
       <!-- %= renderer.create(Invoice.class).entityName("entity.fields")
                   .attribute("translate", "entity.fields.receiptNumber")
                   .attribute("translate-placeholder", "entity.fields.receiptNumber")
