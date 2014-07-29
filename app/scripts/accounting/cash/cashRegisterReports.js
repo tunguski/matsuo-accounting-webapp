@@ -11,9 +11,7 @@ angular.module('mt.accounting')
     .controller('CashRegisterReportsCtrl', function ($scope, $http, $routeParams, $timeout, CashRegister, CashRegisterReport) {
       $scope.setTitle("Raporty kasowe");
 
-      $scope.cashRegisterReports = CashRegisterReport.query({}, function (data) {
-        $scope.filterCashReports();
-      });
+      $scope.cashRegisterReports = CashRegisterReport.query({}, $scope.filterCashReports);
 
       $scope.cashRegisters = CashRegister.query({}, function() {
         if ($routeParams.idCashRegister) {
