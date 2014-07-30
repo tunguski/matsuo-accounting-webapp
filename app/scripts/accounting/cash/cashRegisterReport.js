@@ -22,7 +22,7 @@ angular.module('mt.accounting')
         }
 
         return sum;
-      }
+      };
 
 
       $scope.save = function () {
@@ -31,7 +31,7 @@ angular.module('mt.accounting')
           $location.replace();
           $location.url('/cash/cashRegisterReport/' + _.lastUrlElement(headers));
         });
-      }
+      };
 
 
       function configureReport(report) {
