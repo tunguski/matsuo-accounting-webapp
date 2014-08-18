@@ -8,8 +8,8 @@
  * Controller of the mt.accounting
  */
 angular.module('mt.accounting')
-    .controller('InvoiceCtrl', function ($scope, $routeParams, $http, abstractInvoiceCtrl, CashDocument) {
-      abstractInvoiceCtrl($scope, $routeParams, $http);
+    .controller('InvoiceCtrl', function ($scope, $routeParams, abstractInvoiceCtrl, CashDocument) {
+      abstractInvoiceCtrl($scope);
 
 
       $scope.addInvoicePosition = function() {

@@ -9,7 +9,7 @@
  */
 angular.module('mt.accounting')
     .controller('CorrectiveInvoiceCtrl', function ($scope, $routeParams, $http, abstractInvoiceCtrl, CashDocument) {
-      abstractInvoiceCtrl($scope, $routeParams, $http);
+      abstractInvoiceCtrl($scope);
 
 
       $scope.addInvoicePosition = function() {
