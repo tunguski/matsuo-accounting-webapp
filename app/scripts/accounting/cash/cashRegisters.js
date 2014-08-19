@@ -9,7 +9,7 @@
  */
 angular.module('mt.accounting')
     .controller('CashRegistersCtrl', function ($scope, $http, $location, CashRegister, CashRegisterReport) {
-      $scope.setTitle("Lista kas");
+      $scope.setTitle('Lista kas');
 
       CashRegister.query({}, function (cashRegisters) {
         $scope.cashRegisters = cashRegisters;
@@ -28,6 +28,6 @@ angular.module('mt.accounting')
       });
 
       $scope.showActualCashRegisterReport = function (cashRegister) {
-        $location.path("/cash/cashRegisterReport/" + cashRegister.value.id);
+        $location.path('/cash/cashRegisterReport/' + cashRegister.value.id);
       }
     });

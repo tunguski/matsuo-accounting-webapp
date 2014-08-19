@@ -40,7 +40,7 @@ angular.module('mt.accounting')
         angular.forEach(report.prints, function (print) {
           print.printSimpleClassName = print.printClass.split('.').pop();
         });
-        loadAndInject(report.prints, User, "userCreated", "id");
+        loadAndInject(report.prints, User, 'userCreated', 'id');
       }
 
 

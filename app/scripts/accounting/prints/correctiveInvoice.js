@@ -14,7 +14,7 @@ angular.module('mt.accounting')
 
       $scope.addInvoicePosition = function() {
         $scope.entity.elements.push({ fields: {
-          jm: "szt.",
+          jm: 'szt.',
           count: 1,
           price: 0,
           taxRate: 0,

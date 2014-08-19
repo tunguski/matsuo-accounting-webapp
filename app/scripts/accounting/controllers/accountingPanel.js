@@ -9,19 +9,19 @@
  */
 angular.module('mt.accounting')
     .controller('AccountingPanelCtrl', function ($scope, $http, $location, CashRegister, CashRegisterReport) {
-      $scope.setTitle("Panel administracji księgowej");
+      $scope.setTitle('Panel administracji księgowej');
 
-      $scope.flotChartData = [[ ["January", 10], ["February", 8], ["March", 4], ["April", 13], ["May", 17], ["June", 9] ]];
+      $scope.flotChartData = [[ ['January', 10], ['February', 8], ['March', 4], ['April', 13], ['May', 17], ['June', 9] ]];
       $scope.optionsForFlot = {
         series: {
           bars: {
             show: true,
             barWidth: 0.6,
-            align: "center"
+            align: 'center'
           }
         },
         xaxis: {
-          mode: "categories",
+          mode: 'categories',
           tickLength: 0
         }
       };

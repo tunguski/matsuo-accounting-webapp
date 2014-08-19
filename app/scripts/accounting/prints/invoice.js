@@ -14,7 +14,7 @@ angular.module('mt.accounting')
 
       $scope.addInvoicePosition = function() {
         $scope.entity.elements.push({ fields: {
-          jm: "szt.",
+          jm: 'szt.',
           count: 1,
           price: 0,
           taxRate: 0
@@ -34,7 +34,7 @@ angular.module('mt.accounting')
             sellDate: moment().toISOString(),
             dueDate: moment().toISOString(),
             fields: {
-              paymentType: "CASH",
+              paymentType: 'CASH',
               isReceipt: !scope.isInvoice
             },
             elements: []

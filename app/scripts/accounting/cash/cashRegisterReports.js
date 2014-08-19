@@ -9,7 +9,7 @@
  */
 angular.module('mt.accounting')
     .controller('CashRegisterReportsCtrl', function ($scope, $http, $routeParams, $timeout, CashRegister, CashRegisterReport) {
-      $scope.setTitle("Raporty kasowe");
+      $scope.setTitle('Raporty kasowe');
 
       $scope.cashRegisterReports = CashRegisterReport.query({}, $scope.filterCashReports);
 
@@ -34,7 +34,7 @@ angular.module('mt.accounting')
       $scope.$watch('cashRegister.value', $scope.filterCashReports);
 
 
-      initializeSelect2($scope, "cashRegister", null, "cashRegister", {
+      initializeSelect2($scope, 'cashRegister', null, 'cashRegister', {
         allowClear: true,
         definedElements: $scope.cashRegisters
       });
