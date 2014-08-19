@@ -18,7 +18,7 @@ angular.module('mt.accounting')
 
         if ($scope.entity) {
           angular.forEach($scope.entity.prints, function (print) {
-            sum = sum + parseFloat(print.fields.cashRegisterAmount);
+            sum = sum + parseFloat(print.cashRegisterAmount);
           });
         }
 
