@@ -16,7 +16,9 @@
     <div mt-form-part="invoice" mt-entity-name="entity.fields">
       <div mt-form-field="number" />
       <div mt-form-field="paymentType" />
-      <div mt-form-field="bankAccountNumber" />
+      <div ng-show="entity.fields.paymentType !== 'CASH'">
+        <div mt-form-field="bankAccountNumber" />
+      </div>
       <div mt-form-field="comments" />
     </div>
   </div>

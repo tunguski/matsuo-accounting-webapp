@@ -70,7 +70,7 @@ angular.module('mt.accounting')
         $scope.priceBrutto = function(position) {
           return $scope.calculateValue(position, function(fields) {
             return $scope.priceNetto(position) + $scope.taxValue(position); });
-        }
+        };
 
 
         $scope.positions = {};
@@ -89,7 +89,7 @@ angular.module('mt.accounting')
 
           recalculateSummary($scope.positions['invoice']);
           recalculateSummary($scope.positions['corrective']);
-        }
+        };
 
 
         function summary(taxSummaries, fieldName) {
@@ -121,14 +121,5 @@ angular.module('mt.accounting')
           positions.summaryNetto = summary(positions.taxSummaries, 'summaryNetto');
           positions.summaryBrutto = summary(positions.taxSummaries, 'summaryBrutto');
         }
-
-
-        $scope.$watch('entity.fields.paymentType', function() {
-          if (!$scope.entity || !$scope.entity.fields || $scope.entity.fields.paymentType == 'CASH') {
-            $('.entity_fields_bankAccountNumber').hide();
-          } else {
-            $('.entity_fields_bankAccountNumber').show();
-          }
-        });
       };
     });
