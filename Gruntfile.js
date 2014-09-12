@@ -86,10 +86,10 @@ module.exports = function (grunt) {
               connect.static('.tmp'),
               connect().use(
                 '/bower_components',
-                connect.static('./bower_components')
-              ),
-              connect.static(appConfig.app),
+                connect.static('./bower_components'),
               connect.static('./bower_components/matsuo-core-webapp/app/')
+              ),
+              connect.static(appConfig.app)
             ];
           }
         }

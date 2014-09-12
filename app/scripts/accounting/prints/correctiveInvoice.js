@@ -11,16 +11,12 @@ angular.module('mt.accounting')
     .controller('CorrectiveInvoiceCtrl', function ($scope, $routeParams, $http, abstractInvoiceCtrl, CashDocument) {
       abstractInvoiceCtrl($scope);
 
+      var addInvoicePosition = $scope.addInvoicePosition;
 
       $scope.addInvoicePosition = function() {
-        $scope.entity.elements.push({ fields: {
-          jm: 'szt.',
-          count: 1,
-          price: 0,
-          taxRate: 0,
+        addInvoicePosition({
           isAfterCorrection: true
-        }});
-        $scope.recalculateSummaries();
+        });
       };
 
 

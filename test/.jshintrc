@@ -34,6 +34,7 @@
     "containsAll": false,
 
     "toastr": false,
+    "moment": false,
 
     "rootScope": false,
     "scope": false,

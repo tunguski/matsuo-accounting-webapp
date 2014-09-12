@@ -12,17 +12,6 @@ angular.module('mt.accounting')
       abstractInvoiceCtrl($scope);
 
 
-      $scope.addInvoicePosition = function() {
-        $scope.entity.elements.push({ fields: {
-          jm: 'szt.',
-          count: 1,
-          price: 0,
-          taxRate: 0
-        }});
-        $scope.recalculateSummaries();
-      };
-
-
       $scope.pluginPrintLogic(function (scope) {
         scope.documentType = 'invoice';
         scope.recalculateSummaries = $scope.recalculateSummaries;
@@ -30,9 +19,9 @@ angular.module('mt.accounting')
           scope.isInvoice = !$routeParams.receipt;
 
           scope.entity = new CashDocument({
-            issuanceDate: moment().toISOString(),
-            sellDate: moment().toISOString(),
-            dueDate: moment().toISOString(),
+            issuanceDate: moment(),
+            sellDate: moment(),
+            dueDate: moment(),
             fields: {
               paymentType: 'CASH',
               isReceipt: !scope.isInvoice
@@ -44,6 +33,19 @@ angular.module('mt.accounting')
     })
     .service('abstractInvoiceCtrl', function () {
       return function ($scope) {
+
+
+        $scope.addInvoicePosition = function(additionalFields) {
+          var position = { fields: angular.extend({
+            jm: 'szt.',
+            count: 1,
+            price: 0,
+            taxRate: 0
+          }, additionalFields)};
+
+          $scope.entity.elements.push(position);
+          $scope.recalculateSummaries();
+        };
 
 
         $scope.calculateValue = function(position, fn) {

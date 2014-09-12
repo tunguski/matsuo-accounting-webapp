@@ -14,8 +14,8 @@ describe('CashRegisterReportCtrl', function () {
         cashRegister: {
         },
         prints: [
-          { fields: { cashRegisterAmount: 11 } },
-          { fields: { cashRegisterAmount: 23 } }
+          { cashRegisterAmount: 11 },
+          { cashRegisterAmount: 23 }
         ]
       };
 

@@ -14,12 +14,17 @@
   "quotmark": "single",
   "regexp": true,
   "undef": true,
-  "unused": true,
+  "unused": false,
   "strict": true,
   "trailing": true,
   "smarttabs": true,
   "globals": {
     "angular": false,
-    "_": false
+    "_": false,
+
+    "toastr": false,
+    "moment": false,
+
+    "initializeSelect2": false
   }
 }

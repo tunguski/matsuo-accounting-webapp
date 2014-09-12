@@ -38,13 +38,11 @@
           <tr><td>Adres</td><td ng-bind-html="idBuyer.value.address | addressPresenter"></td></tr>
         </table>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6"></div>
-      <div class="col-md-3" ng-show="idSeller.value.nip">
+      <div class="col-md-3">
         <table class="table table-condensed details-table">
           <tr ng-show="idBuyer.value.nip"><td>NIP</td><td>{{idBuyer.value.nip}}</td></tr>
           <tr ng-show="idBuyer.value.regon"><td>Regon</td><td>{{idBuyer.value.regon}}</td></tr>
+          <tr ng-show="idBuyer.value.pesel"><td>Pesel</td><td>{{idBuyer.value.pesel}}</td></tr>
         </table>
       </div>
     </div>

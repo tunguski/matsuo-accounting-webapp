@@ -1,0 +1,50 @@
+
+<script type="text/ng-template" id="cash/editCashRegister.html">
+  <div class="modal-header">
+    <h3>Kasa</h3>
+  </div>
+
+  <div class="modal-body">
+    <form name="form" ng-submit="save()">
+      <div id="cashRegister" class="form-group">
+        <label class="control-label">Kasa</label>
+        <input ui-select2="cashRegister.options" name="cashRegister" ng-model="cashRegister.value"
+               class="form-control entity_idCashRegister">
+      </div>
+    </form>
+  </div>
+
+  <div class="modal-footer">
+    <button ng-show="cashRegisterService.cashRegister" ng-click="close('REPORT')"
+            name="reckon_register" class="btn btn-info">Rozlicz kasę</button>
+    <button ng-click="close('CANCEL')" class="btn btn-default">Anuluj</button>
+    <button ng-click="close('CHANGE_CASH_REGISTER')"
+            name="change_register" class="btn btn-primary">Zmień kasę</button>
+  </div>
+</script>
+
+<table class="table table-condensed details-table user-info-table">
+  <tr>
+    <td>Zalogowany od:</td>
+    <td>{{ loginTime | formatDayMoment }}</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="nowrap">{{ loginDuration }}</td>
+  </tr>
+  <tr>
+    <td>Uprawnienia:</td>
+    <td>{{ groups() }}</td>
+  </tr>
+  <tr>
+    <td>Nieprzeczytanych notatek:</td>
+    <td>7</td>
+  </tr>
+  <tr>
+    <td>Kasa</td>
+    <td>
+      {{ cashRegisterService.cashRegister.code }}
+      <a name="change-cash-register" ng-click="editCashRegister()" class="fa fa-edit"></a>
+    </td>
+  </tr>
+</table>
