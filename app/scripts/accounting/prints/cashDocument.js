@@ -14,9 +14,11 @@ angular.module('mt.accounting')
       $scope.cashRegisterService = cashRegisterService;
       $scope.printTypeService = printTypeService;
 
+      $scope.costInvoice = !!$routeParams.costInvoice;
+
       function sellerFromCashRegister(cashRegister) {
         if ($scope.entity && cashRegister && !$scope.entity.id) {
-          $scope.idSeller.value = cashRegister.reckoningParty;
+          $scope[$scope.costInvoice ? 'idBuyer' : 'idSeller'].value = cashRegister.reckoningParty;
           $scope.entity.fields.sellPlace = cashRegister.reckoningParty.address.town;
         }
       }
@@ -127,16 +129,24 @@ angular.module('mt.accounting')
       }
 
       initializeSelect2($scope, 'entity.idSeller', '/api/payers', 'party', {
-        bindEntity: function(seller) { $scope.entity.fields['seller.id'] = seller.id; },
+        bindEntity: function(seller) {
+          $scope.entity.fields['seller.id'] = seller.id;
+        },
         initSelection: function(element, callback) {
-          callback($scope.seller);
+          if ($scope.seller) {
+            callback($scope.seller);
+          }
         }
       });
 
       initializeSelect2($scope, 'entity.idBuyer', '/api/payers', 'party', {
-        bindEntity: function(buyer) { $scope.entity.fields['buyer.id'] = buyer.id; },
+        bindEntity: function(buyer) {
+          $scope.entity.fields['buyer.id'] = buyer.id;
+        },
         initSelection: function(element, callback) {
-          callback($scope.buyer);
+          if ($scope.buyer) {
+            callback($scope.buyer);
+          }
         }
       });
 

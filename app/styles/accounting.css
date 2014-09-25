@@ -25,3 +25,7 @@ header.subhead > div {
 .footer > div {
   position: relative;
 }
+
+.nvtooltip h4 {
+  text-align: center;
+}
