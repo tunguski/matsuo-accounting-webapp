@@ -8,7 +8,7 @@
  * Controller of the mt.accounting
  */
 angular.module('mt.accounting')
-    .controller('CashRegisterReportCtrl', function ($scope, $routeParams, $location, printTypeService,
+    .controller('CashRegisterReportCtrl', function ($scope, $rootScope, $routeParams, $location, printTypeService,
                                                     CashRegisterReport, User) {
       $scope.printTypeService = printTypeService;
 
@@ -18,7 +18,8 @@ angular.module('mt.accounting')
 
         if ($scope.entity) {
           angular.forEach($scope.entity.prints, function (print) {
-            sum = sum + parseFloat(print.cashRegisterAmount);
+            var value = parseFloat(print.cashRegisterAmount);
+            sum = sum + (print.fields['seller.id'] === ('' + print.idBucket) ? value : -value);
           });
         }
 
