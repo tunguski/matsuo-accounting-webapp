@@ -29,7 +29,7 @@
             <td>{{"cashDocument.shortName." + printTypeService.printTypeSpecial(print) | translate}}</td>
             <td><a href="#/prints/cashDocument/{{print.id}}">{{print.createdTime | formatDateTime}}</a></td>
             <td>{{print.userCreated.username}}</td>
-            <td>{{print.fields.buyer}}</td>
+            <td>{{print.fields['buyer.name']}}</td>
             <td>
               <ul>
                 <li ng-repeat="position in print.elements">{{position.fields.serviceName}}</li>
