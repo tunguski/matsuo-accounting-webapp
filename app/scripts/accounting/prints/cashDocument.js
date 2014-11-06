@@ -9,8 +9,8 @@
  * Controller of the mt.accounting
  */
 angular.module('mt.accounting')
-    .controller('CashDocumentCtrl', function ($scope, $routeParams, $location, $filter, $q, cashRegisterService, printTypeService,
-                                                    CashDocument, Payer, CashRegisterReport) {
+    .controller('CashDocumentCtrl', function ($scope, $routeParams, $location, $filter, $q, cashRegisterService,
+                                              printTypeService, CashDocument, Payer, CashRegisterReport) {
       $scope.cashRegisterService = cashRegisterService;
       $scope.printTypeService = printTypeService;
 
@@ -128,27 +128,40 @@ angular.module('mt.accounting')
         throw new Error('Document type not defined');
       }
 
-      initializeSelect2($scope, 'entity.idSeller', '/api/payers', 'party', {
-        bindEntity: function(seller) {
-          $scope.entity.fields['seller.id'] = seller.id;
-        },
-        initSelection: function(element, callback) {
-          if ($scope.seller) {
-            callback($scope.seller);
-          }
-        }
-      });
 
-      initializeSelect2($scope, 'entity.idBuyer', '/api/payers', 'party', {
-        bindEntity: function(buyer) {
-          $scope.entity.fields['buyer.id'] = buyer.id;
-        },
-        initSelection: function(element, callback) {
-          if ($scope.buyer) {
-            callback($scope.buyer);
-          }
-        }
-      });
+      $scope.person = {};
+
+      $scope.partyFormatResult = partyFormatResult;
+      $scope.searchPersons = function (search) {
+        Payer.query({ query: search }, scopeSetter($scope, 'people'));
+      };
+
+
+      $scope.idSeller = { options: {
+            url: '/api/payers',
+            formatElement: partyFormatResult,
+            bindEntity: function(seller) {
+              $scope.entity.fields['seller.id'] = seller.id;
+            },
+            initSelection: function(element, callback) {
+              if ($scope.seller) {
+                callback($scope.seller);
+              }
+            }
+          } };
+
+      $scope.idBuyer = { options: {
+            url: '/api/payers',
+            formatElement: partyFormatResult,
+            bindEntity: function(seller) {
+              $scope.entity.fields['seller.id'] = seller.id;
+            },
+            initSelection: function(element, callback) {
+              if ($scope.buyer) {
+                callback($scope.buyer);
+              }
+            }
+          } };
 
       $scope.save = saveOrUpdate($scope, 'entity',
           function(entity, headers) {
