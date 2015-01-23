@@ -9,17 +9,29 @@ describe('CashRegisterReportCtrl', function () {
     }));
 
 
+    function createPrint(seller, idBucket, value) {
+      return {
+        fields: {
+          'seller.id': '' + seller
+        },
+        idBucket: '' + idBucket,
+        cashRegisterAmount: value
+      };
+    }
+
+
     it('save', function () {
       scope.entity = {
         cashRegister: {
         },
         prints: [
-          { cashRegisterAmount: 11 },
-          { cashRegisterAmount: 23 }
+          createPrint(17, 17, 11),
+          createPrint(17, 17, 23),
+          createPrint(17, 31, 4)
         ]
       };
 
-      expect(scope.sumCashDocuments()).toBe(34);
+      expect(scope.sumCashDocuments()).toBe(30);
     });
 
 
