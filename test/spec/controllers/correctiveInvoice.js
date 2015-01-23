@@ -3,7 +3,6 @@
 describe('CorrectiveInvoiceCtrl', function () {
   var controller, documentCtrl;
 
-
   var checkRequest = containsAll('"issuanceDate"', '"sellDate"', '"dueDate', '"paymentType":"TRANSFER"');
 
   describe('new', function () {

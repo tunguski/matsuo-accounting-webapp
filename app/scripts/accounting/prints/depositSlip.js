@@ -10,7 +10,7 @@
 angular.module('mt.accounting')
     .controller('DepositSlipCtrl', function ($scope, $routeParams, CashRegisterReport, CashDocument) {
       function createEmptyEntity(scope) {
-        scope.entity = new DepositSlip({
+        scope.entity = new CashDocument({
           issuanceDate: moment().toISOString(),
           sellDate: moment().toISOString(),
           dueDate: moment().toISOString(),
