@@ -30,7 +30,7 @@ angular.module('mt.accounting')
 
       $scope.loadPayer = function(field) {
         return function (idEntity) {
-          Payer.get({ idPayer: idEntity }, scopeSetter($scope, field + '.value'));
+          Payer.get({ idPayer: idEntity }, $scope.scopeSetter(field + '.value'));
         }
       };
 
@@ -133,7 +133,7 @@ angular.module('mt.accounting')
 
       $scope.partyFormatResult = partyFormatResult;
       $scope.searchPersons = function (search) {
-        Payer.query({ query: search }, scopeSetter($scope, 'people'));
+        Payer.query({ query: search }, $scope.scopeSetter('people'));
       };
 
 
