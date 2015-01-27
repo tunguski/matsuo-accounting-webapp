@@ -29,3 +29,7 @@ header.subhead > div {
 .nvtooltip h4 {
   text-align: center;
 }
+
+table.table-condensed ul {
+  margin-bottom: 0;
+}
