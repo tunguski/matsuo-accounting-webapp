@@ -60,6 +60,33 @@ angular.module('mt.accounting')
             corrective_receipt: 'Pozycje po korekcie',
             corrective: 'Pozycje po korekcie'
           }
+        },
+
+        issuanceDate: 'Data wystawienia',
+        sellDate: 'Data sprzedaży',
+        sellPlace: 'Miejsce sprzedaży',
+        dueDate: 'Termin płatności',
+        paymentType: 'Typ płatności',
+        bankAccountNumber: 'Nr konta bankowego',
+
+        enum: {
+          PaymentType: {
+            CASH: 'Gotówka',
+            TRANSFER: 'Przelew'
+          }
+        },
+
+        entity: {
+          fields: {
+            number: 'Numer',
+            comments: 'Komentarz'
+          },
+          buyer: {
+            id: 'Kupujący'
+          },
+          seller: {
+            id: 'Sprzedający'
+          }
         }
 
       });
