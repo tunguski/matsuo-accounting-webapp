@@ -80,9 +80,12 @@
   </div>
 
   <div class="form-actions">
-    <button type="submit" ng-disabled="entity.id || entity.prints.length == 0"
+    <button type="submit" ng-if="!entity.id && entity.prints.length != 0"
             ng-click="save()" class="btn btn-primary">Zapisz raport</button>
-    <a class="btn btn-default" href="javascript:;" onclick="window.history.back()" translate="cancel"></a>
+    <a class="btn btn-default" href="javascript:;" onclick="window.history.back()"
+       ng-if="!entity.id && entity.prints.length != 0" translate="cancel"></a>
+    <a class="btn btn-default" href="javascript:;" onclick="window.history.back()"
+       ng-if="entity.id || entity.prints.length == 0" translate="back"></a>
     <a ng-if="entity.id" class="btn btn-warning" ng-href="#/prints/cashDocument?type=withdrawSlip&idCashReport={{entity.id}}">Wydaj do sejfu</a>
     <a ng-if="entity.id" class="btn btn-info" ng-href="/api/reports/pdf/cashRegisterReport?idReport={{entity.id}}" target="_blank">Pobierz pdf</a>
     <a ng-if="entity.id" class="btn btn-info" ng-href="/api/reports/xls/cashRegisterReport?idReport={{entity.id}}" target="_blank">Pobierz xls</a>

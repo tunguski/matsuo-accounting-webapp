@@ -1,25 +1,25 @@
 <div class="row">
   <div class="col-md-6">
     <div mt-form-part="accountingPrint" mt-entity-name="entity">
-      <div mt-form-field="issuanceDate" />
+      <div mt-form-field="issuanceDate" mtf-ng-disabled="entity.id" />
     </div>
     <div mt-form-part="invoice" mt-entity-name="entity.fields">
-      <div mt-form-field="sellPlace" />
+      <div mt-form-field="sellPlace" mtf-ng-disabled="entity.id" />
     </div>
     <div mt-form-part="accountingPrint" mt-entity-name="entity">
-      <div mt-form-field="sellDate" />
-      <div mt-form-field="dueDate" />
+      <div mt-form-field="sellDate" mtf-ng-disabled="entity.id" />
+      <div mt-form-field="dueDate" mtf-ng-disabled="entity.id" />
     </div>
   </div>
 
   <div ng-show="isInvoice" class="col-md-6">
     <div mt-form-part="invoice" mt-entity-name="entity.fields">
-      <div mt-form-field="number" />
-      <div mt-form-field="paymentType" />
+      <div mt-form-field="number" mtf-ng-disabled="true" />
+      <div mt-form-field="paymentType" mtf-ng-disabled="entity.id" />
       <div ng-show="entity.fields.paymentType !== 'CASH'">
-        <div mt-form-field="bankAccountNumber" />
+        <div mt-form-field="bankAccountNumber" mtf-ng-disabled="entity.id" />
       </div>
-      <div mt-form-field="comments" />
+      <div mt-form-field="comments" mtf-ng-disabled="entity.id" />
     </div>
   </div>
   <div ng-show="!isInvoice" class="col-md-6">

@@ -13,7 +13,9 @@ angular.module('mt.accounting')
 
       $scope.cashRegisterReports = CashRegisterReport.query({}, $scope.filterCashReports);
 
-      $scope.cashRegisters = CashRegister.query({}, function() {
+      $scope.cashRegisters = [{ code: 'Wszystkie' }];
+      CashRegister.query({}, function(cashRegisters) {
+        $scope.cashRegisters.pushArray(cashRegisters);
         if ($routeParams.idCashRegister) {
           $scope.cashRegister.value = _.find($scope.cashRegisters, function(cashRegister) {
             return cashRegister.id === parseInt($routeParams.idCashRegister);
@@ -22,7 +24,7 @@ angular.module('mt.accounting')
       });
 
       $scope.filterCashReports = function (n) {
-        if (n) {
+        if (n && n.id) {
           $scope.filteredReports = _.filter($scope.cashRegisterReports, function (report) {
             return report.cashRegister.id === n.id;
           });
@@ -38,4 +40,5 @@ angular.module('mt.accounting')
         allowClear: true,
         definedElements: $scope.cashRegisters
       });
+      $scope.cashRegister.value = $scope.cashRegisters[0];
     });

@@ -1,5 +1,5 @@
 <div ng-controller="InvoiceCtrl">
   <div ng-include="'/views/prints/invoiceGeneralData.html'"></div>
 
-  <invoice-table data="positions.invoice"></invoice-table>
+  <invoice-table data="positions.invoice" readonly="{{ !!entity.id }}"></invoice-table>
 </div>

@@ -3,14 +3,14 @@
   <div class="row">
     <div class="col-md-6">
       <div mt-form-part="accountingPrint">
-        <div mt-form-field="issuanceDate" />
-        <div mt-form-field="sellDate" />
+        <div mt-form-field="issuanceDate" mtf-ng-disabled="entity.id" />
+        <div mt-form-field="sellDate" mtf-ng-disabled="entity.id" />
       </div>
     </div>
     <div class="col-md-6">
       <div mt-form-part="depositSlip" mt-entity-name="entity.fields">
-        <div mt-form-field="sellPlace" />
-        <div mt-form-field="number" />
+        <div mt-form-field="sellPlace" mtf-ng-disabled="entity.id" />
+        <div mt-form-field="number" mtf-ng-disabled="entity.id" />
       </div>
     </div>
   </div>

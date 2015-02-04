@@ -3,7 +3,7 @@
   <div ng-include="invoiceGeneralData.html"></div>
 
   <invoice-table data="positions.invoice" readonly="true"></invoice-table>
-  <invoice-table data="positions.corrective"></invoice-table>
+  <invoice-table data="positions.corrective" readonly="{{ !!entity.id }}"></invoice-table>
 
   <div class="row">
     <div class="col-md-3 col-md-offset-8">

@@ -3,10 +3,25 @@
 <div ng-controller="CashRegisterReportsCtrl">
 
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-md-4">
       <form class="form">
+
+        <div class="form-group">
+          <label>Wybór kasy</label>
+          <ui-select mt-select-options="cashRegister.options" name="entity_cashRegister"
+                     ng-model="cashRegister.value" allow-clear>
+
+            <ui-select-match>
+              {{ $select.selected.code }}
+            </ui-select-match>
+            <ui-select-choices repeat="element in cashRegisters | filter:$select.search">
+              {{ element.code }}
+            </ui-select-choices>
+
+          </ui-select>
+        </div>
+
         <h4>Lista raportów</h4>
-        <input ui-select2="cashRegister.options" name="entity_cashRegister" ng-model="cashRegister.value">
       </form>
     </div>
   </div>
