@@ -19,7 +19,7 @@ angular.module('mt.accounting')
         if ($scope.entity) {
           angular.forEach($scope.entity.prints, function (print) {
             var value = parseFloat(print.cashRegisterAmount);
-            sum = sum + (print.fields['seller.id'] === ('' + print.idBucket) ? value : -value);
+            sum = sum + value;
           });
         }
 
