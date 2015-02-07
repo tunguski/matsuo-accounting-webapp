@@ -41,12 +41,15 @@ angular.module('mt.accounting').
       $scope.cashRegisterService = cashRegisterService;
 
       // $scope.cashRegisters must be initialized before initializeSelect2 invocation
-      $scope.cashRegisters = CashRegister.query({}, function (cashRegisters) {
+      CashRegister.query({}, function (cashRegisters) {
         $scope.cashRegister.value = cashRegisterService.cashRegister;
         $scope.actualCashRegister = cashRegisterService.cashRegister;
+        $scope.cashRegister.options.definedElements = $scope.cashRegisters;
       });
 
-      initializeSelect2($scope, 'cashRegister', null, 'cashRegister', { definedElements: $scope.cashRegisters });
+      $scope.cashRegister = {
+        options: {}
+      };
 
       $scope.close = function(result) {
         if(result === 'CHANGE_CASH_REGISTER') {
