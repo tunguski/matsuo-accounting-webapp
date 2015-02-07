@@ -1,6 +1,9 @@
 <div class="row">
   <div class="col-md-12">
-    <h4 translate="{{ 'cashDocument.positions.' + printTypeService.printTypeSpecial(entity) }}"></h4>
+    <h4>
+      <span translate="{{ 'cashDocument.positions.' + printTypeService.printTypeSpecial(entity) }}"></span>
+      <button ng-show="!readonly" ng-click="addInvoicePosition()" class="btn btn-default btn-xs">Nowa pozycja</button>
+    </h4>
 
     <table class="table table-condensed table-hover table-striped input-table">
       <thead>
@@ -74,7 +77,5 @@
 
       </tbody>
     </table>
-
-    <h4><a ng-show="!readonly" class="fa fa-plus-circle" ng-click="addInvoicePosition()"></a></h4>
   </div>
 </div>
