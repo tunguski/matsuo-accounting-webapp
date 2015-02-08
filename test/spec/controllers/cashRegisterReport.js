@@ -14,8 +14,10 @@ describe('CashRegisterReportCtrl', function () {
         fields: {
           'seller.id': '' + seller
         },
+        cost: seller === idBucket,
         idBucket: '' + idBucket,
-        cashRegisterAmount: value
+        value: value,
+        cashRegisterAmount: seller === idBucket ? value : - value
       };
     }
 
