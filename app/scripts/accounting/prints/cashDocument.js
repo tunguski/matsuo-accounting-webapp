@@ -188,6 +188,8 @@ angular.module('mt.accounting')
       $scope.recalculateSummaries();
     }
   })
+
+
   .factory('printTypeService', function() {
     var service = {
       /**
