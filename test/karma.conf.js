@@ -46,7 +46,6 @@ module.exports = function(config) {
 
       'app/scripts/accounting.js',
       'app/scripts/**/*.js',
-      //'matsuo-js-util.js',
 
       'test/lib/*.js',
       'test/spec/**/*.js'
